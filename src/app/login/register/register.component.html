@@ -1,0 +1,53 @@
+<div class="module">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 col-12">
+            <mat-card class="text-center">
+                <mat-card-content>
+                    <h2>Register</h2>
+                    <div *ngIf="!registered">
+                        <form [formGroup]="registerForm">
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Username</mat-label>
+                                    <input matInput required formControlName="username">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Password</mat-label>
+                                    <input matInput type="password" required formControlName="password">
+                                    
+                                </mat-form-field>
+                                <mat-error class="big-error" *ngIf="registerForm.controls['password'].hasError('passwordComplexity')">Password must be at least 8 characters long and contain an uppercase, lowercase, number, and symbol (!, @, etc)</mat-error>
+                            </div>
+                            <div class="margin-bottom">
+                                <mat-form-field>
+                                    <mat-label>Confirm Password</mat-label>
+                                    <input matInput type="password" required formControlName="passwordConfirm">
+                                    
+                                </mat-form-field>
+                                <mat-error *ngIf="registerForm.controls['passwordConfirm'].hasError('passwordMismatch')">Passwords must match</mat-error>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-6">
+                                <button mat-raised-button color="accent" [routerLink]="['/login']">Back to Login</button>
+                            </div>
+                            <div class="col-6">
+                                <button mat-raised-button color="primary" (click)="register()" [disabled]="!registerForm.valid">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="registered" class="text-center">
+                        <div class="margin-bottom">
+                            You have successfully registered. Please login to continue.
+                        </div>
+                        <div>
+                            <button mat-raised-button color="accent" [routerLink]="['/login']">Back to Login</button>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

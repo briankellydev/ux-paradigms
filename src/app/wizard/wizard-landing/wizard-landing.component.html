@@ -1,0 +1,82 @@
+<div class="module">
+    <div class="row">
+        <div class="offset-md-3 col-md-6 col-12">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Sith Lord Therapy Wizard</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-horizontal-stepper [linear]="true" #stepper>
+                        <mat-step [stepControl]="firstFormGroup">
+                            <form [formGroup]="firstFormGroup">
+                              <p>Describe briefly how you're feeling today.</p>
+                              <mat-form-field>
+                                <mat-label>Feelings</mat-label>
+                                <textarea matInput placeholder="Tell us how you're feeling..." formControlName="feelings" required></textarea>
+                              </mat-form-field>
+                              <div class="text-right">
+                                <button mat-raised-button matStepperNext color="primary" [disabled]="!firstFormGroup.valid">Next</button>
+                              </div>
+                            </form>
+                          </mat-step>
+                          <mat-step [stepControl]="secondFormGroup">
+                            <form [formGroup]="secondFormGroup">
+                              <p class="text-center text-bold margin-bottom">Rate how closely the following statements apply to your mood over the last two weeks.</p>
+                              <div class="row margin-bottom">
+                                  <div class="col-md-6 col-12">
+                                    <span class="text-italic">I no longer am interested in my hobbies.</span>
+                                  </div>
+                                  <div class="col-md-6 col-12 text-center">
+                                    <mat-radio-group formControlName="q1">
+                                        <mat-radio-button value="true">True</mat-radio-button>
+                                        <mat-radio-button value="false">False</mat-radio-button>
+                                    </mat-radio-group>
+                                  </div>
+                                
+                                
+                              </div>
+                              <div class="row margin-bottom">
+                                <div class="col-md-6 col-12">
+                                    <span class="text-italic">I find myself questioning the power of the Dark Side.</span>
+                                </div>
+                                <div class="col-md-6 col-12 text-center">
+                                    <mat-radio-group formControlName="q2">
+                                        <mat-radio-button value="true">True</mat-radio-button>
+                                        <mat-radio-button value="false">False</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                                </div>
+                                <div class="row margin-bottom">
+                                    <div class="col-md-6 col-12">
+                                        <span class="text-italic">Sometimes I become sad for no reason.</span>
+                                    </div>
+                                    <div class="col-md-6 col-12 text-center">
+                                        <mat-radio-group formControlName="q3">
+                                            <mat-radio-button value="true">True</mat-radio-button>
+                                            <mat-radio-button value="false">False</mat-radio-button>
+                                        </mat-radio-group>  
+                                    </div>
+                                </div>
+                                
+                              
+                              
+                              <div class="row">
+                                  <div class="col-6">
+                                    <button mat-raised-button matStepperPrevious color="accent">Back</button>
+                                  </div>
+                                  <div class="col-6 text-right">
+                                    <button mat-raised-button matStepperNext color="primary" [disabled]="!secondFormGroup.valid">Next</button>
+                                  </div>
+                              </div>
+                            </form>
+                          </mat-step>
+                          <mat-step [stepControl]="firstFormGroup">
+                              <ng-template matStepLabel>Done!</ng-template>
+                              <p class="text-center">Thanks for reaching out to the Galactic Empire's Division of Psychology. A representative will be in touch with you shortly.</p>
+                          </mat-step>
+                    </mat-horizontal-stepper>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+@import '../../../variables.scss';
+
+h2 {
+    margin-bottom: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+fa-icon {
+    margin-right: 5px;
+}
+
+.report {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    .info {
+        padding-top: 10px;
+    }
+}
+
+section {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: $accent;
+    min-height: 85px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.main-chip {
+    margin: auto;
+    width: 100px;
+}
+
+@media screen and (max-width: 767px) {
+    .center-mobile {
+        text-align: center;
+    }
+    mat-card {
+        margin-bottom: 10px;
+    }
+}

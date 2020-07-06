@@ -1,0 +1,42 @@
+<header>
+    <div class="row">
+        <div class="col-md-3 col-4">
+            <fa-icon [icon]="ICONS.HAMBURGER" size="2x" (click)="toggleMenu()"></fa-icon>
+        </div>
+        <div class="col-md-6 col-4 text-center">
+            <img src="assets/empire.png">
+        </div>
+        <div class="col-md-3 col-4">
+            <div class="row">
+                <div class="col-6 text-right">
+                    <div [matBadge]="notifications.length" matBadgeColor="accent">
+                        <fa-icon [icon]="ICONS.BELL" size="2x" [matMenuTriggerFor]="notificationsMenu"></fa-icon>
+                        <mat-menu #notificationsMenu="matMenu">
+                            <div class="menu-header">
+                                Notifications
+                            </div>
+                            <div class="menu-item" *ngFor="let item of notifications" (click)="openModal()">
+                                {{item.title}}
+                            </div>
+                        </mat-menu>
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    <app-user-chip [matMenuTriggerFor]="userMenu"></app-user-chip>
+                    <mat-menu #userMenu="matMenu">
+                        <div class="menu-header">
+                            Darth Vader
+                        </div>
+                        <div class="menu-item" [routerLink]="['/profile']">
+                            Profile
+                        </div>
+                        <div class="menu-item" [routerLink]="['/login']">
+                            Logout
+                        </div>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

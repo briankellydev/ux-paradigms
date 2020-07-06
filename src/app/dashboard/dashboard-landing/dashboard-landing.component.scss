@@ -1,0 +1,35 @@
+@import '../../../variables.scss';
+
+table {
+    width: 100%;
+}
+
+google-chart {
+    width: 100%;
+}
+
+.poker-chip {
+    font-size: 75px;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: $primary;
+    line-height: 150px;
+    text-align: center;
+    margin: auto;
+}
+
+mat-card {
+    min-height: 275px;
+    transition: 0.5s opacity linear;
+}
+
+@media screen and (max-width: 767px) {
+    tr, th, td {
+        font-size: 10px !important;
+    }
+    mat-card {
+        margin-bottom: 10px;
+    }
+}

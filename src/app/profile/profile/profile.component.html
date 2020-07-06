@@ -1,0 +1,109 @@
+<div class="module">
+    <mat-card class="margin-bottom">
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-3 col-12">
+                    <div class="main-chip">
+                        <app-user-chip [heightInPx]="100" [backgroundColor]="'#ba0018'"></app-user-chip>
+                    </div>
+                </div>
+                <div class="col-md-9 col-12 center-mobile">
+                    <h2>Darth Vader</h2>
+                    <div class="text-italic margin-bottom">Senior Director of Death Star</div>
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <a>
+                                <fa-icon [icon]="ICONS.EMAIL"></fa-icon>vader@deathstar.net
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <a>
+                                <fa-icon [icon]="ICONS.PHONE"></fa-icon>+1 (602)-555-1234
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <a>
+                                <fa-icon [icon]="ICONS.PHONE"></fa-icon>+1 (602)-555-5678
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Direct Reports</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="report" *ngFor="let report of directReports">
+                        <div class="row">
+                            <div class="col-2">
+                                <app-user-chip [initials]="report.initials" [backgroundColor]="'#ba0018'"></app-user-chip>
+                            </div>
+                            <div class="col-8">
+                                <h3>{{report.firstName}} {{report.lastName}}</h3>
+                            </div>
+                            <div class="col-2 text-center info">
+                                <fa-icon class="cursor-pointer" [icon]="ICONS.INFO" size="2x"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-6 col-12">
+            <mat-card class="margin-bottom">
+                <mat-card-header>
+                    <mat-card-title>
+                        Contact Information <fa-icon class="cursor-pointer" [icon]="ICONS.PENCIL"></fa-icon>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col-6">
+                            <section>
+                                <p>
+                                    <a>
+                                        <fa-icon [icon]="ICONS.EMAIL"></fa-icon>vader@deathstar.net
+                                    </a>
+                                </p>
+                                <p>
+                                    <a>
+                                        <fa-icon [icon]="ICONS.PHONE"></fa-icon>+1 (602)-555-1234
+                                    </a>
+                                </p>
+                                <p>
+                                    <a>
+                                        <fa-icon [icon]="ICONS.PHONE"></fa-icon>+1 (602)-555-5678
+                                    </a>
+                                </p>
+                            </section>
+                        </div>
+                        <div class="col-6">
+                            <section>
+                                1234 W. Darkside Ln<br>
+                                Office 32<br>
+                                Death Star, OS 32049
+                            </section>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        About Me <fa-icon class="cursor-pointer" [icon]="ICONS.PENCIL"></fa-icon>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <section>
+                        I may be a Sith Lord and master of the Dark Side, but don't let appearances fool you. At heart, I'll always be Little Annie, and every night I cry myself to sleep cuddling my stuffed teddy bear.
+                    </section>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

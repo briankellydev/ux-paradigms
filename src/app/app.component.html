@@ -1,0 +1,20 @@
+<div>
+  <app-header (menuToggled)="toggleMenu()"></app-header>
+  <div id="drawer-container">
+    <mat-drawer-container>
+      <mat-drawer mode="over" [opened]="menuOpen">
+        <div class="menu-item row no-gutters" *ngFor="let item of navigation" [routerLink]="[item.route]">
+          <div class="col-2 text-center">
+            <fa-icon [icon]="item.icon"></fa-icon>
+          </div>
+          <div class="col-10">
+            {{item.name}}
+          </div>
+        </div>
+      </mat-drawer>
+      <mat-drawer-content>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="module">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Home
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <ng-container *ngFor="let item of navigation">
+                    <div class="col-md-3 col-6 margin-bottom" *ngIf="!item.hideOnHome">
+                        <mat-card class="portal-module text-center" [routerLink]="[item.route]">
+                            <mat-card-content>
+                                <div>
+                                    <fa-icon [icon]="item.icon" size="3x"></fa-icon>
+                                </div>
+                                <h3>{{item.name}}</h3>
+                                <p>{{item.description}}</p>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </ng-container>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

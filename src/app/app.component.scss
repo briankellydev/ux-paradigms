@@ -1,0 +1,16 @@
+@import '../variables.scss';
+
+#drawer-container, mat-drawer-container { 
+    width: 100%;
+    margin-top: 60px;
+    min-height: calc(100vh - 50px);
+}
+
+.menu-item, mat-drawer {
+    background-color: $background;
+    width: 300px;
+}
+
+.menu-item:hover {
+    background-color: $accent;
+}

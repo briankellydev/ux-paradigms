@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.portal-module {
+    cursor: pointer;
+    background-color: $accent;
+    height: 150px;
+    transition: 0.2s background-color linear;
+    h3 {
+        margin: 0;
+    }
+    p {
+        font-style: italic;
+    }
+    &:hover {
+        background-color: $accent-hover;
+    }
+}

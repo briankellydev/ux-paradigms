@@ -1,0 +1,57 @@
+<div class="module">
+    <div class="row margin-bottom">
+        <div class="col-md-3 col-12">
+            <mat-card [ngStyle]="{'opacity': opacities[0]}">
+                <mat-card-header>
+                    <mat-card-title>
+                        Labor Costs
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <google-chart type="LineChart" [data]="laborData" [columns]="laborColumns" [options]="laborOptions" [dynamicResize]="true"></google-chart>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-6 col-12">
+            <mat-card [ngStyle]="{'opacity': opacities[1]}">
+                <mat-card-header>
+                    <mat-card-title>
+                        Satisfaction By Department
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <google-chart type="BarChart" [data]="satisfactionData" [columns]="satisfactionColumns" [options]="laborOptions" [dynamicResize]="true"></google-chart>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-3 col-12">
+            <mat-card [ngStyle]="{'opacity': opacities[2]}">
+                <mat-card-header>
+                    <mat-card-title>
+                        Days Until Operational
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="poker-chip">39</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <mat-card [ngStyle]="{'opacity': opacities[3]}">
+        <mat-card-header>
+            <mat-card-title>
+                System Alerts
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <table mat-table [dataSource]="alerts">
+                <tr mat-header-row *matHeaderRowDef="columnKeys"></tr>
+                <tr mat-row *matRowDef="let myRowData; columns: columnKeys"></tr>
+                <ng-container *ngFor="let column of columnKeys; let i = index" [matColumnDef]="column">
+                    <th mat-header-cell *matHeaderCellDef> {{columnLabels[i]}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+                  </ng-container>
+            </table>
+        </mat-card-content>
+    </mat-card>
+</div>
